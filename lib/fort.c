@@ -38,7 +38,7 @@ SOFTWARE.
 #ifndef FORT_IMPL_H
 #define FORT_IMPL_H
 
-#if defined(_MSC_VER)
+#if defined(_MSC_VER) && !defined(_CRT_SECURE_NO_WARNINGS)
 #define _CRT_SECURE_NO_WARNINGS /* To disable warnings for unsafe functions */
 #endif
 
