@@ -38,6 +38,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #if defined(_MSC_VER)
 #pragma warning(pop)
@@ -416,6 +417,7 @@ void *utf8dup(const void *src)
 
     // figure out how many bytes (including the terminator) we need to copy first
     size_t bytes = utf8size(src);
+	size_t size = bytes;
 
     n = (char *)malloc(bytes);
 
@@ -432,6 +434,7 @@ void *utf8dup(const void *src)
         }
 
         // append null terminating byte
+		assert(bytes < size);
         n[bytes] = '\0';
         return n;
     }

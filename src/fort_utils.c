@@ -315,7 +315,7 @@ int print_n_strings(f_conv_context_t *cntx, size_t n, const char *str)
 
             cntx->u.buf += raw_written;
             cntx->raw_avail -= raw_written;
-            return utf8len(str) * n;
+            return (int)(utf8len(str) * n);
 #endif /* FT_HAVE_UTF8 */
         default:
             assert(0);
@@ -333,7 +333,7 @@ int ft_nprint(f_conv_context_t *cntx, const char *str, size_t strlen)
     cntx->u.buf += strlen;
     cntx->raw_avail -= strlen;
     *cntx->u.buf = '\0'; /* Do we need this ? */
-    return strlen;
+    return (int)(strlen);
 }
 
 #ifdef FT_HAVE_WCHAR
@@ -351,7 +351,7 @@ int ft_nwprint(f_conv_context_t *cntx, const wchar_t *str, size_t strlen)
     /* Do we need this ? */
     wchar_t end_of_string = L'\0';
     memcpy(cntx->u.buf, &end_of_string, sizeof(wchar_t));
-    return strlen;
+    return (int)(strlen);
 }
 #endif /* FT_HAVE_WCHAR */
 
@@ -369,7 +369,7 @@ int ft_nu8print(f_conv_context_t *cntx, const void *beg, const void *end)
     cntx->u.buf += raw_len;
     cntx->raw_avail -= raw_len;
     *(cntx->u.buf) = '\0'; /* Do we need this ? */
-    return raw_len; /* what return here ? */
+    return (int)(raw_len); /* what return here ? */
 }
 #endif /* FT_HAVE_UTF8 */
 

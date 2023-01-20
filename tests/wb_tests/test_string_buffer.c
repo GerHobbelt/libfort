@@ -629,7 +629,7 @@ void test_wchar_basics(void)
 
 static void test_print_n_strings_(const char *str, size_t n)
 {
-    int sz = n * strlen(str);
+    size_t sz = n * strlen(str);
     {
         f_string_buffer_t *buffer = create_string_buffer(200, CHAR_BUF);
         const char *origin = (char *)buffer_get_data(buffer);
@@ -651,7 +651,7 @@ static void test_print_n_strings_(const char *str, size_t n)
         cntx.raw_avail = 200;
         cntx.b_type = W_CHAR_BUF;
         assert_true(print_n_strings(&cntx, n, str) == /*sizeof(wchar_t) **/ sz);
-        assert_true(cntx.u.buf - origin == (ptrdiff_t)sizeof(wchar_t) * sz);
+        assert_true(cntx.u.buf - origin == (ptrdiff_t)(sizeof(wchar_t) * sz));
         destroy_string_buffer(buffer);
     }
 #endif /* FT_HAVE_WCHAR */
