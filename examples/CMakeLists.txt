@@ -1,26 +1,26 @@
 
 add_executable(${PROJECT_NAME}_simple_table
-    1-simple_table.c)
+    1-simple_table_c.c)
 target_link_libraries(${PROJECT_NAME}_simple_table
     fort)
 
 add_executable(${PROJECT_NAME}_custom_table
-    2-custom_table.c)
+    2-custom_table_c.c)
 target_link_libraries(${PROJECT_NAME}_custom_table
     fort)
 
 add_executable(${PROJECT_NAME}_complex_layout
-    3-complex_layout.c)
+    3-complex_layout_c.c)
 target_link_libraries(${PROJECT_NAME}_complex_layout
     fort)
 
 add_executable(${PROJECT_NAME}_fill_table
-    4-fill_table.c)
+    4-fill_table_c.c)
 target_link_libraries(${PROJECT_NAME}_fill_table
     fort)
 
 add_executable(${PROJECT_NAME}_beautiful_table
-    5-beautiful_table.c)
+    5-beautiful_table_c.c)
 target_link_libraries(${PROJECT_NAME}_beautiful_table
     fort)
 
@@ -40,7 +40,7 @@ target_link_libraries(${PROJECT_NAME}_math_table
     fort)
 
 add_executable(${PROJECT_NAME}_non_ascii_table
-    9-non_ascii_table.c)
+    9-non_ascii_table_c.c)
 target_link_libraries(${PROJECT_NAME}_non_ascii_table
     fort)
 

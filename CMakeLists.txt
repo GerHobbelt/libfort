@@ -155,9 +155,8 @@ set(FORT_HAVE_UTF8 "${FORT_ENABLE_UTF8}" CACHE STRING "fort option")
 # Subdirectories
 # ------------------------------------------------------------------------------
 
-add_subdirectory(lib)
+add_subdirectory(src)
 if(FORT_ENABLE_TESTING)
-    add_subdirectory(src)
     add_subdirectory(tests)
     add_subdirectory(examples)
 endif()
@@ -172,7 +171,8 @@ file(GLOB_RECURSE FortHeaders
     "lib/*.hpp"
     "tests/*.h"
     "tests/*.hpp"
-    "src/*.h")
+    "src/*.h"
+    "src/*.hpp")
 add_custom_target(headers SOURCES ${FortHeaders})
 
 

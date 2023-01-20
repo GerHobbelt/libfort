@@ -16,7 +16,7 @@ add_executable(${PROJECT_NAME}_test_dev
     tests.c
     test_utils.c)
 target_link_libraries(${PROJECT_NAME}_test_dev
-    fort_dev)
+    fort)
 target_compile_definitions(${PROJECT_NAME}_test_dev
     PUBLIC FORT_WB_TESTING_ENABLED=1)
 target_include_directories(${PROJECT_NAME}_test_dev
