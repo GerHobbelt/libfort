@@ -3,6 +3,10 @@
 #include "fort.hpp"
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_add_subdir_tests_main
+#endif
+
 int main()
 {
     fort::char_table table;
@@ -13,4 +17,6 @@ int main()
         << "3" << "Verstappen" << "1:26.469" << "29.78" << fort::endr;
 
     std::cout << table.to_string() << std::endl;
+
+	return 0;
 }

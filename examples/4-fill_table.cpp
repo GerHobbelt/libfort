@@ -3,6 +3,11 @@
 
 #include "fort.hpp"
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_04_fill_table_pp_example_main
+#endif
+
 int main(void)
 {
     fort::char_table table;
@@ -26,4 +31,6 @@ int main(void)
     table.range_write_ln(std::begin(arr), std::end(arr));
 
     std::cout << table.to_string() << std::endl;
+
+	return 0;
 }

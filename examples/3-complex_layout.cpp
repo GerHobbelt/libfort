@@ -3,6 +3,10 @@
 #include "fort.hpp"
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_03_complex_table_pp_example_main
+#endif
+
 int main()
 {
     fort::char_table table;
@@ -32,4 +36,5 @@ int main()
 
     std::cout << table.to_string() << std::endl;
 
+	return 0;
 }

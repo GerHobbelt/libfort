@@ -83,6 +83,11 @@ int run_bb_test_suite(void)
     return 0;
 }
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_tests_main
+#endif
+
 int main(void)
 {
     int status = 0;

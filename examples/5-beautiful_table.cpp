@@ -3,6 +3,10 @@
 #include "fort.hpp"
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_05_beautiful_table_pp_example_main
+#endif
+
 int main(void)
 {
 #if defined(FT_HAVE_UTF8)

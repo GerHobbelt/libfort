@@ -3,6 +3,10 @@
 #include "fort.h"
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_02_custom_table_example_main
+#endif
+
 int main(void)
 {
 

@@ -4,7 +4,7 @@
 #include <locale.h>
 #include <string.h>
 
-void print_table_with_style(const struct ft_border_style *style, const char *name)
+static void print_table_with_style(const struct ft_border_style *style, const char *name)
 {
     /* Just create a table with some content */
     ft_table_t *table = ft_create_table();
@@ -30,7 +30,7 @@ void print_table_with_style(const struct ft_border_style *style, const char *nam
     ft_destroy_table(table);
 }
 
-void print_table_with_different_styles(void)
+static void print_table_with_different_styles(void)
 {
 #define PRINT_TABLE_WITH_STYLE(style) \
     print_table_with_style(style, #style)
@@ -78,7 +78,7 @@ static ft_table_t *create_basic_wtable(const struct ft_border_style *style)
 }
 #endif
 
-void print_table_with_different_styles_in_tbl_format(void)
+static void print_table_with_different_styles_in_tbl_format(void)
 {
 #if defined(FT_HAVE_WCHAR) && !defined(FT_MICROSOFT_COMPILER)
     setlocale(LC_CTYPE, "");
@@ -144,6 +144,11 @@ void print_table_with_different_styles_in_tbl_format(void)
 #undef PRINT_TABLE_WITH_STYLE
 #endif
 }
+
+
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_06_print_styles_example_main
+#endif
 
 int main(void)
 {

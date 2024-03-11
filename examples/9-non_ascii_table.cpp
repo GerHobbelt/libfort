@@ -6,7 +6,7 @@
 
 #if defined(FT_HAVE_UTF8)
 /* Custom function to compute visible width of utf8 strings */
-int u8strwid(const void *beg, const void *end, size_t *width)
+static int u8strwid(const void *beg, const void *end, size_t *width)
 {
     const char *emojis[] = {"😃", "😍"};
     const size_t sz = sizeof(emojis) / sizeof(emojis[0]);
@@ -23,6 +23,9 @@ int u8strwid(const void *beg, const void *end, size_t *width)
 #endif
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_09_non_ascii_table_pp_example_main
+#endif
 
 int main(void)
 {

@@ -4,7 +4,7 @@
 #include <locale.h>
 #include <string.h>
 
-void use_printf(void)
+static void use_printf(void)
 {
     ft_table_t *table = ft_create_table();
 
@@ -19,7 +19,7 @@ void use_printf(void)
     ft_destroy_table(table);
 }
 
-void use_write(void)
+static void use_write(void)
 {
     ft_table_t *table = ft_create_table();
 
@@ -34,7 +34,7 @@ void use_write(void)
     ft_destroy_table(table);
 }
 
-void use_row_write(void)
+static void use_row_write(void)
 {
     ft_table_t *table = ft_create_table();
 
@@ -53,7 +53,7 @@ void use_row_write(void)
     ft_destroy_table(table);
 }
 
-void use_table_write(void)
+static void use_table_write(void)
 {
     ft_table_t *table = ft_create_table();
 
@@ -71,6 +71,9 @@ void use_table_write(void)
 }
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_04_fill_table_example_main
+#endif
 
 int main(void)
 {

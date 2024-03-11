@@ -6,6 +6,10 @@
 #include "fort.h"
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_05_beautiful_table_example_main
+#endif
+
 void colorfull_table_wchar(void)
 {
 #if defined(FT_HAVE_WCHAR) && !defined(FT_MICROSOFT_COMPILER)

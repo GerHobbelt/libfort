@@ -3,6 +3,10 @@
 #include "fort.h"
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_03_complex_table_example_main
+#endif
+
 int main(void)
 {
     ft_table_t *table = ft_create_table();

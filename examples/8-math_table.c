@@ -2,6 +2,11 @@
 
 #include "fort.h"
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_08_math_table_example_main
+#endif
+
 int main(void)
 {
 #ifdef FT_HAVE_UTF8

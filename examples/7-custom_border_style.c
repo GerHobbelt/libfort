@@ -4,6 +4,10 @@
 #include "fort.h"
 
 
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_07_custom_border_style_example_main
+#endif
+
 int main(void)
 {
     ft_table_t *table = ft_create_table();

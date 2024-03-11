@@ -24,6 +24,11 @@ int u8strwid(const void *beg, const void *end, size_t *width)
 }
 #endif
 
+
+#if defined(BUILD_MONOLITHIC)
+#define main    fort_09_non_ascii_table_example_main
+#endif
+
 int main(void)
 {
 #if defined(FT_HAVE_UTF8)
