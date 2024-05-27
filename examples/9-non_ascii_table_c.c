@@ -7,7 +7,7 @@
 
 #if defined(FT_HAVE_UTF8)
 /* Custom function to compute visible width of utf8 strings */
-int u8strwid(const void *beg, const void *end, size_t *width)
+static int u8strwid(const void *beg, const void *end, size_t *width)
 {
 #define MIN(a, b) (((a) < (b)) ? (a) : (b))
     const char *emojis[] = {"😃", "😍"};
